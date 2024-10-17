@@ -12,3 +12,12 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+model superheroe { 
+  id Int @id @default(autoincrement())
+  name String
+  power String
+  marital_status String 
+  ranking Int
+  createAt DateTime @default(now())
+  updateAp DateTime @updatedAt
+}
