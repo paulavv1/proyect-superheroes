@@ -13,17 +13,17 @@ async function superheroe () {
             ranking: 3,
         }
         
-    })
+    });
     console.log({
         push
-    })
+    });
 }
 superheroe()
 .catch((e)=> {console.error(e) 
     process.exit(1)
 })
 .finally(async()=>{
-    await prisma.$disconnect
+    await prisma.$disconnect()
 })
 
 
