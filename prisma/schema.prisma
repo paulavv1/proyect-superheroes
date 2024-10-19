@@ -15,6 +15,7 @@ datasource db {
 model superheroe { 
   id Int @id @default(autoincrement())
   name String
+  description String
   power String
   marital_status String 
   ranking Int
