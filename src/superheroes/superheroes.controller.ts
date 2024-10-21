@@ -2,8 +2,10 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { SuperheroesService } from './superheroes.service';
 import { CreateSuperheroDto } from './dto/create-superhero.dto';
 import { UpdateSuperheroDto } from './dto/update-superhero.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('superheroes')
+@ApiTags('Superheroes')
 export class SuperheroesController {
   constructor(private readonly superheroesService: SuperheroesService) {}
 

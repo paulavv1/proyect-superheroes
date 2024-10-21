@@ -4,10 +4,14 @@ import { UpdateSuperheroDto } from './dto/update-superhero.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
+
 export class SuperheroesService {
-  constructor(private readonly prisma:PrismaService) {}//c
+  constructor(private readonly prisma:PrismaService) {}
+  
   create(createSuperheroDto: CreateSuperheroDto) {
-    return 'This action adds a new superhero';
+    return this.prisma.superheroe.create({
+      data: createSuperheroDto,
+    });
   }
 
   findTopTenSingle() {
@@ -31,7 +35,10 @@ export class SuperheroesService {
   }
 
   update(id: number, updateSuperheroDto: UpdateSuperheroDto) {
-    return `This action updates a #${id} superhero`;
+    return this.prisma.superheroe.update({
+      where:{id},
+      data:updateSuperheroDto,
+    });
   }
 
   remove(id: number) {
